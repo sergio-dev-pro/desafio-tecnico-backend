@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "50de0d20-ce29-47a4-a5c5-0e1a0570bb80",
+		"name": "Teste back end - exemplos de requisição",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testAPI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/test-api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test-api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRuleSpecificDay",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rule\" : {\r\n        \"dateDay\" : \"2021-01-24\",\r\n        \"type\" : \"SPECIFIC_DAY\",\r\n        \"intervals\" : [{\"startHour\" : \"7:30\", \"endHour\" : \"8:30\"}, {\"startHour\" : \"15:30\", \"endHour\" : \"16:30\"}]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rules/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						""
+					]
+				},
+				"description": "Criar regra."
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRuleWekly",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rule\" : {\r\n        \"type\" : \"WEKLY\",\r\n        \"interval\" : {\"startHour\" : \"11:35\", \"endHour\" : \"12:50\"},\r\n        \"days\" : [\"MONDAY\", \"FRIDAY\", \"SUNDAY\"]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rules/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						""
+					]
+				},
+				"description": "Criar regra."
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRuleDaily",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rule\" : {\r\n        \"type\" : \"DAILY\",\r\n        \"interval\" : {\"startHour\" : \"11:35\", \"endHour\" : \"11:50\"}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rules/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						""
+					]
+				},
+				"description": "Criar regra."
+			},
+			"response": []
+		},
+		{
+			"name": "removeruleWekly",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rules/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeruleDaily",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rules/DAILY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						"DAILY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeruleSpecificday",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rules/627ff6ec-29ea-4dd6-a889-4da0194e6c97",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						"627ff6ec-29ea-4dd6-a889-4da0194e6c97"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListRuleBetweenDates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rules/between-dates/?fromDate=24-01-2021&toDate=24-01-2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rules",
+						"between-dates",
+						""
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "24-01-2021"
+						},
+						{
+							"key": "toDate",
+							"value": "24-01-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
